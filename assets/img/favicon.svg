@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Atelier Alma">
+  <rect width="64" height="64" rx="16" fill="#211d1f" />
+  <path d="M16 44 28.5 16h7L48 44h-6.8l-2.4-6H25.2l-2.4 6H16Zm11.3-11.5h9.4L32 21.2l-4.7 11.3Z" fill="#f7f1e7" />
+  <path d="M19 50h26" stroke="#c9a86a" stroke-width="3" stroke-linecap="round" />
+</svg>
