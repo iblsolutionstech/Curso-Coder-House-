@@ -1,0 +1,21 @@
+{
+  "name": "atelier-alma",
+  "version": "1.0.0",
+  "description": "Sitio institucional estatico para un atelier de arreglos de ropa y alta costura.",
+  "scripts": {
+    "sass": "sass --watch assets/scss/main.scss assets/css/styles.css",
+    "build:sass": "sass assets/scss/main.scss assets/css/styles.css --style=compressed"
+  },
+  "keywords": [
+    "html",
+    "sass",
+    "bootstrap",
+    "alta-costura",
+    "arreglos-de-ropa"
+  ],
+  "author": "Atelier Alma",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+h1,
+h2,
+h3 {
+  color: inherit;
+  font-family: v.$font-display;
+  line-height: 1.08;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 7vw, 5.85rem);
+  max-width: 11ch;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.eyebrow {
+  @extend %eyebrow;
+}
+
+.hero__lead {
+  color: rgba(v.color(white), .9);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  max-width: 610px;
+}

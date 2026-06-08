@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as v;
+
+.contact-panel {
+  background: v.color(white);
+}
+
+.contact-list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+
+  li {
+    align-items: center;
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: auto 1fr;
+  }
+
+  i {
+    color: v.color(bordeaux);
+    font-size: 1.25rem;
+  }
+}
+
+.map-card {
+  align-items: end;
+  background:
+    linear-gradient(135deg, rgba(v.color(bordeaux), .9), rgba(v.color(sage), .78)),
+    repeating-linear-gradient(45deg, rgba(v.color(white), .22) 0 2px, transparent 2px 18px);
+  border-radius: v.$radius-md;
+  color: v.color(white);
+  display: flex;
+  min-height: 240px;
+  overflow: hidden;
+  padding: 1.25rem;
+  position: relative;
+
+  &::before {
+    background: v.color(gold);
+    border: 4px solid v.color(white);
+    border-radius: 999px;
+    content: "";
+    height: 1.6rem;
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 1.6rem;
+  }
+
+  span {
+    font-family: v.$font-display;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+}

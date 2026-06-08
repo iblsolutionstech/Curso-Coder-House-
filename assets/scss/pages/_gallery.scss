@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+
+  @include m.respond(md) {
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  border-radius: v.$radius-md;
+  color: v.color(white);
+  min-height: 320px;
+  overflow: hidden;
+  position: relative;
+
+  @include m.respond(md) {
+    min-height: 420px;
+  }
+
+  &::after {
+    background: linear-gradient(0deg, rgba(v.color(ink), .82), rgba(v.color(ink), .02));
+    content: "";
+    inset: 0;
+    position: absolute;
+  }
+
+  img {
+    @include m.image-cover;
+    filter: saturate(.95);
+    inset: 0;
+    position: absolute;
+    transform: scale(1.01);
+    transition: transform 480ms ease, filter 480ms ease;
+  }
+
+  div {
+    bottom: 0;
+    left: 0;
+    padding: 1.2rem;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  &:hover {
+    img {
+      filter: saturate(1.08);
+      transform: scale(1.07);
+    }
+  }
+
+  &--tall {
+    @include m.respond(md) {
+      grid-row: span 2;
+    }
+  }
+
+  &--wide {
+    @include m.respond(md) {
+      grid-column: span 2;
+    }
+  }
+}

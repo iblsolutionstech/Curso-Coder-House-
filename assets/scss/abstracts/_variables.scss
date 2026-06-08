@@ -1,0 +1,41 @@
+@use "sass:map";
+
+$font-display: "Georgia", "Times New Roman", serif;
+$font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+$colors: (
+  ink: #211d1f,
+  paper: #fffaf4,
+  porcelain: #f7f1e7,
+  bordeaux: #7a283f,
+  bordeaux-dark: #5f1d31,
+  gold: #c9a86a,
+  sage: #65715f,
+  blush: #e8b6a7,
+  storm: #4a4f57,
+  white: #ffffff
+);
+
+$space: (
+  xs: .5rem,
+  sm: .75rem,
+  md: 1rem,
+  lg: 1.5rem,
+  xl: 2.5rem,
+  xxl: 4.5rem
+);
+
+$radius-sm: .5rem;
+$radius-md: .75rem;
+$radius-lg: 1rem;
+$max-content: 1180px;
+$transition-fast: 180ms ease;
+$transition-med: 320ms ease;
+
+@function color($name) {
+  @return map.get($colors, $name);
+}
+
+@function spacing($name) {
+  @return map.get($space, $name);
+}

@@ -1,0 +1,105 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: v.color(paper);
+  color: v.color(ink);
+  font-family: v.$font-body;
+  line-height: 1.65;
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: v.color(bordeaux);
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+::selection {
+  background: v.color(blush);
+  color: v.color(ink);
+}
+
+.skip-link {
+  background: v.color(ink);
+  color: v.color(white);
+  left: 1rem;
+  padding: .75rem 1rem;
+  position: fixed;
+  top: -5rem;
+  z-index: 2000;
+
+  &:focus {
+    top: 1rem;
+    @include m.focus-ring;
+  }
+}
+
+.section {
+  @extend %section-spacing;
+  overflow-x: hidden;
+}
+
+.section-muted {
+  background:
+    linear-gradient(90deg, rgba(v.color(gold), .08), transparent 45%),
+    v.color(porcelain);
+}
+
+.section-accent {
+  background: v.color(ink);
+  color: v.color(white);
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.section-heading {
+  margin-inline: auto;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  max-width: 760px;
+  text-align: center;
+}
+
+.container {
+  max-width: v.$max-content;
+}
+
+.editorial-img {
+  aspect-ratio: 4 / 5;
+  border-radius: v.$radius-lg;
+  object-fit: cover;
+  @include m.soft-shadow;
+
+  &--wide {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+.text-balance {
+  max-width: 68ch;
+  text-wrap: pretty;
+}

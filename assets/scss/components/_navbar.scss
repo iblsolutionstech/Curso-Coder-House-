@@ -1,0 +1,91 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.navbar {
+  background: rgba(v.color(paper), .88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(v.color(ink), .08);
+  padding-block: .85rem;
+  transition: box-shadow v.$transition-med, padding-block v.$transition-med;
+
+  &.is-scrolled {
+    box-shadow: 0 12px 30px rgba(v.color(ink), .08);
+    padding-block: .55rem;
+  }
+
+  .navbar-toggler {
+    border: 0;
+
+    &:focus {
+      box-shadow: none;
+      @include m.focus-ring;
+    }
+  }
+}
+
+.navbar-brand,
+.footer-brand {
+  align-items: center;
+  color: v.color(ink);
+  display: inline-flex;
+  font-family: v.$font-display;
+  font-size: 1.3rem;
+  font-weight: 700;
+  gap: .65rem;
+}
+
+.brand-mark {
+  background: v.color(ink);
+  border-radius: 50%;
+  color: v.color(porcelain);
+  display: grid;
+  font-family: v.$font-body;
+  font-size: .75rem;
+  font-weight: 900;
+  height: 2.35rem;
+  letter-spacing: .03em;
+  place-items: center;
+  width: 2.35rem;
+}
+
+.nav-link {
+  color: v.color(ink);
+  font-weight: 800;
+  position: relative;
+
+  &::after {
+    background: v.color(bordeaux);
+    bottom: .25rem;
+    content: "";
+    height: 2px;
+    left: .5rem;
+    position: absolute;
+    right: .5rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform v.$transition-fast;
+  }
+
+  &:hover,
+  &.active {
+    color: v.color(bordeaux);
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .navbar-nav {
+    padding-block: 1rem .4rem;
+  }
+}

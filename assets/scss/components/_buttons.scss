@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.btn {
+  align-items: center;
+  border-radius: v.$radius-sm;
+  display: inline-flex;
+  font-weight: 800;
+  gap: .55rem;
+  justify-content: center;
+  min-height: 3rem;
+  padding-inline: 1.15rem;
+  transition: background-color v.$transition-fast, border-color v.$transition-fast, color v.$transition-fast, transform v.$transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    @include m.focus-ring;
+  }
+}
+
+.btn-brand {
+  background: v.color(bordeaux);
+  border-color: v.color(bordeaux);
+  color: v.color(white);
+
+  &:hover {
+    background: v.color(bordeaux-dark);
+    border-color: v.color(bordeaux-dark);
+    color: v.color(white);
+  }
+}
+
+.btn-outline-light {
+  border-color: rgba(v.color(white), .75);
+  color: v.color(white);
+
+  &:hover {
+    background: v.color(white);
+    color: v.color(ink);
+  }
+}

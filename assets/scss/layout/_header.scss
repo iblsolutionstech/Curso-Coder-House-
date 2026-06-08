@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.hero,
+.page-hero {
+  background-color: v.color(ink);
+  background-position: center;
+  background-size: cover;
+  color: v.color(white);
+  display: grid;
+  min-height: min(760px, 92vh);
+  overflow: hidden;
+  padding-top: 5rem;
+  place-items: center;
+  position: relative;
+
+  .eyebrow {
+    color: v.color(gold);
+  }
+}
+
+.page-hero {
+  min-height: 62vh;
+}
+
+.hero__overlay {
+  background:
+    linear-gradient(90deg, rgba(v.color(ink), .88) 0%, rgba(v.color(ink), .62) 42%, rgba(v.color(ink), .18) 100%),
+    linear-gradient(0deg, rgba(v.color(ink), .35), rgba(v.color(ink), .1));
+  inset: 0;
+  position: absolute;
+}
+
+.hero__content {
+  animation: soft-reveal .8s ease both;
+  padding-block: clamp(4rem, 10vw, 7rem);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  margin-top: 2rem;
+}
+
+.hero-home {
+  background-image: url("https://source.unsplash.com/1800x1200/?couture,atelier,sewing");
+}
+
+.hero-services {
+  background-image: url("https://source.unsplash.com/1800x1100/?tailor,sewing,fabric");
+}
+
+.hero-couture {
+  background-image: url("https://source.unsplash.com/1800x1100/?haute-couture,dress,atelier");
+}
+
+.hero-gallery {
+  background-image: url("https://source.unsplash.com/1800x1100/?fashion,atelier,clothing");
+}
+
+.hero-contact {
+  background-image: url("https://source.unsplash.com/1800x1100/?sewing,studio,textile");
+}

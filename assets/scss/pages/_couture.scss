@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.couture-card {
+  @extend %surface;
+  background: v.color(white);
+  display: grid;
+  gap: 1.2rem;
+  overflow: hidden;
+  padding: .75rem;
+
+  img {
+    aspect-ratio: 4 / 5;
+    border-radius: .45rem;
+    object-fit: cover;
+  }
+
+  div {
+    padding: .25rem .6rem 1rem;
+  }
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+
+  @include m.respond(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  article {
+    border-left: 2px solid v.color(gold);
+    padding-left: 1rem;
+    position: relative;
+
+    span {
+      color: v.color(bordeaux);
+      display: inline-block;
+      font-weight: 900;
+      margin-bottom: .75rem;
+    }
+  }
+}

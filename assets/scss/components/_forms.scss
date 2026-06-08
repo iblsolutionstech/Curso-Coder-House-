@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.form-label {
+  color: v.color(ink);
+  font-weight: 800;
+}
+
+.form-control,
+.form-select {
+  background-color: v.color(white);
+  border: 1px solid rgba(v.color(ink), .18);
+  border-radius: v.$radius-sm;
+  min-height: 3rem;
+
+  &:focus {
+    border-color: v.color(bordeaux);
+    box-shadow: 0 0 0 .2rem rgba(v.color(bordeaux), .18);
+  }
+}
+
+textarea.form-control {
+  min-height: 9rem;
+}
+
+.contact-form {
+  @extend %surface;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}

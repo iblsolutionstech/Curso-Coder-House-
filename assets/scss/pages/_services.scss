@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as v;
+
+.pricing-panel {
+  background: v.color(white);
+
+  caption {
+    color: v.color(storm);
+    caption-side: bottom;
+    padding-top: .8rem;
+  }
+
+  th {
+    color: v.color(bordeaux);
+  }
+}
+
+.custom-accordion {
+  .accordion-item {
+    background: v.color(white);
+    border: 1px solid rgba(v.color(ink), .1);
+    border-radius: .5rem;
+    margin-bottom: .8rem;
+    overflow: hidden;
+  }
+
+  .accordion-button {
+    font-weight: 900;
+
+    &:not(.collapsed) {
+      background: rgba(v.color(bordeaux), .08);
+      color: v.color(bordeaux);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba(v.color(bordeaux), .18);
+    }
+  }
+}

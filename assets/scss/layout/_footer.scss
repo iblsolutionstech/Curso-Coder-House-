@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as v;
+
+.site-footer {
+  background: v.color(ink);
+  color: rgba(v.color(white), .78);
+  padding-block: clamp(3rem, 6vw, 5rem) 1.5rem;
+
+  h2 {
+    color: v.color(white);
+    font-family: v.$font-body;
+    font-size: .95rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: rgba(v.color(white), .86);
+
+    &:hover {
+      color: v.color(gold);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.footer-brand {
+  color: v.color(white);
+  margin-bottom: .9rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(v.color(white), .12);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+}

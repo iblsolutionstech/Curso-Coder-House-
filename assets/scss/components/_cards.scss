@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.feature-card,
+.service-card,
+.quote-card,
+.contact-panel,
+.pricing-panel {
+  @extend %surface;
+  height: 100%;
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.feature-card,
+.service-card {
+  transition: border-color v.$transition-med, box-shadow v.$transition-med, transform v.$transition-med;
+
+  i {
+    background: rgba(v.color(bordeaux), .1);
+    border-radius: 999px;
+    color: v.color(bordeaux);
+    display: grid;
+    font-size: 1.5rem;
+    height: 3.2rem;
+    margin-bottom: 1.2rem;
+    place-items: center;
+    width: 3.2rem;
+  }
+
+  &:hover {
+    border-color: rgba(v.color(bordeaux), .22);
+    transform: translateY(-6px);
+    @include m.soft-shadow;
+  }
+}
+
+.service-card {
+  background: v.color(white);
+}
+
+.quote-card {
+  background: v.color(white);
+
+  p {
+    font-family: v.$font-display;
+    font-size: 1.2rem;
+  }
+
+  footer {
+    color: v.color(bordeaux);
+    font-weight: 800;
+  }
+}
+
+.cta-strip {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+
+  @include m.respond(md) {
+    grid-template-columns: 1fr auto;
+  }
+
+  .eyebrow {
+    color: v.color(gold);
+  }
+
+  h2 {
+    max-width: 740px;
+  }
+}
