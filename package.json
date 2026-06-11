@@ -1,5 +1,5 @@
 {
-  "name": "atelier-alma",
+  "name": "atelier YaninaCattadori",
   "version": "1.0.0",
   "description": "Sitio institucional estatico para un atelier de arreglos de ropa y alta costura.",
   "scripts": {
@@ -13,7 +13,7 @@
     "alta-costura",
     "arreglos-de-ropa"
   ],
-  "author": "Atelier Alma",
+  "author": "Atelier YaninaCattadori",
   "license": "MIT",
   "devDependencies": {
     "sass": "^1.77.0"
